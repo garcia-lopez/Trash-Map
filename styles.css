@@ -9,7 +9,6 @@
     align-items: center;     /* Centers vertically */
     background-color: #c5cba0;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 #title {
@@ -103,6 +102,10 @@
          margin-bottom: 10px;
          justify-self: flex-start;
          cursor: pointer;
+      }
+
+      #title {
+         font-size: 20px;
       }
 
       #legend {
