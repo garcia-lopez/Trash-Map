@@ -30,7 +30,7 @@ export const markersWithPics = [
     }
     ,
     {
-        coords:  [12.1390, -86.2230],
+        coords:  [12.1390, -86.2233],
         pic: './assets/trashPics/pic1.jpeg',
         icon: trashIcon,
     }

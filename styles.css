@@ -8,11 +8,14 @@
     justify-content: center; /* Centers horizontally */
     align-items: center;     /* Centers vertically */
     background-color: #c5cba0;
+    box-sizing: border-box;
     overflow: hidden;
 }
 
 #title {
    text-align: center;
+   font-family: "Roboto Slab", serif;
+   color: #4c2b08;
    font-size: 24px;
    margin-bottom: 20px;
 }
@@ -33,9 +36,8 @@
  }
 
  #location{
-    font-size: 20px;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
  }
 
  #legend {
@@ -43,13 +45,12 @@
       max-width: 800px;
       display: flex;
       flex-direction: column;
+      align-items: center;
       height: 200px;
       border-radius: 10px;
       background-color: white;
       margin-top: 10px;
       padding: 10px;
-      margin-bottom: 20px;
-      box-sizing: border-box;
  }
 
  .items-section {
@@ -59,9 +60,18 @@
    gap: 20px;
  }
 
- #legend h2 {
+ #legend h2, p {
+    font-family: "Roboto Slab", serif;
+    color: #4c2b08;
     text-align: center;
-    margin-top: 10px;
+ }
+
+ #legend h2 {
+    font-size: 20px;
+ }
+
+ #legend p {
+    font-size: 15px;
  }
 
  .legend-item {
@@ -90,6 +100,7 @@
 
       #location {
          margin-top: 10px;
+         margin-bottom: 10px;
          justify-self: flex-start;
          cursor: pointer;
       }
