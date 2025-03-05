@@ -37,6 +37,7 @@
  #location{
     height: 30px;
     width: 30px;
+   cursor: pointer;
  }
 
  #legend {
@@ -101,7 +102,7 @@
          margin-top: 10px;
          margin-bottom: 10px;
          justify-self: flex-start;
-         cursor: pointer;
+        
       }
 
       #title {
