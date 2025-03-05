@@ -84,8 +84,7 @@ export const markers = [
     }
     ,
     {
-        coords: [12.1408, -86.2240],
-        icon: trashCan
-        
+        coords: [12.1409, -86.2243],
+        icon: trashCan   
     }
 ]

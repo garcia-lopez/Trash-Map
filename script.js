@@ -35,8 +35,6 @@ let miniMapLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.p
     attribution: '&copy; OpenStreetMap contributors'
 });
 
-
-
 // MiniMap control
 let miniMap = new L.Control.MiniMap(miniMapLayer, {
     toggleDisplay: true,
@@ -53,14 +51,10 @@ for (const i in markersWithPics) { //`String text ${expression}` is called a tem
 }
 
 //Adding markers with no pics
-for (const i in markers) { //`String text ${expression}` is called a template literal
+for (const i in markers) {
     L.marker(markers[i].coords, {icon: markers[i].icon}).addTo(map);
 }
-
-//I still need to style this
-//Add the other coordinates
-//Also I need to add the button to go to the location
-//Also I need to add la leyenda miau
+//Adding the location button
  document.addEventListener('DOMContentLoaded', function() { 
     const locationButton = document.getElementById("location");
     if (locationButton) {
