@@ -1,8 +1,16 @@
-var map = L.map('map').setView([12.1403649,-86.2234044042226], 17);
+import { markers } from './js/MarkersNoPics.js';
+import { markersWithPics } from './js/MarkersWithPics.js';
+
+var map = L.map('map').setView([12.1403630,-86.2234044042226], 17);
 // Initialize the map with the default layers
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+new L.Control.Scale({
+    imperial: false, 
+    position: 'bottomright' 
 }).addTo(map);
 // Define the polygon coordinates
 var polygon = L.polygon([
@@ -34,71 +42,43 @@ let miniMap = new L.Control.MiniMap(miniMapLayer, {
     toggleDisplay: true,
     minimized: false,
     position: 'bottomright',
+    width: 85,  // Set smaller width
+    height: 85, // Set smaller height
     
 }).addTo(map);
 
-
-//Adding markers to show where the trash is located
-var trashIcon = L.icon({
-    iconUrl: './assets/Camera-trash-icon.png',
-    iconSize: [35, 50],
-});
-
-var trashCanIcon = L.icon({
-    iconUrl: './assets/Trash-can-with-Pic.png',
-    iconSize: [35, 50],
-});
-
-
-const markersWithPics = [ 
-    {
-        coords: [12.1385, -86.2220],
-        pic: './assets/trashPics/pic-of-the-corner.jpeg',
-        icon: trashIcon
-    },
-    {
-        coords: [12.1416, -86.2233],
-        pic: './assets/trashPics/pic-last-one-on-top.jpeg',
-        icon: trashIcon
-    }
-    ,
-    {
-        coords: [12.1408, -86.2240],
-        pic: './assets/trashPics/pic-in-the-middle-area.jpeg',
-        icon: trashIcon,
-    }
-    ,
-    {
-        coords:  [12.1390, -86.2230],
-        pic: './assets/trashPics/pic1.jpeg',
-        icon: trashIcon,
-    }
-    //Coordenadas del area del parque
-    ,
-    {
-        coords: [12.1408, -86.2216],
-        pic: './assets/trashPics/pic-of-the-corner.jpeg',
-        icon: trashCanIcon 
-    },
-    {
-        coords: [12.1391, -86.2216],
-        pic: './assets/trashPics/pic-of-the-corner.jpeg',
-        icon: trashCanIcon 
-    },
-    {
-        coords: [12.1398, -86.2216],
-        pic: './assets/trashPics/pic-of-the-corner.jpeg',
-        icon: trashCanIcon 
-    },
-    
-    
-]
-
-
-
+//Adding markers with pics
 for (const i in markersWithPics) { //`String text ${expression}` is called a template literal
     L.marker(markersWithPics[i].coords, {icon: markersWithPics[i].icon}).addTo(map).bindPopup(`<img src=${markersWithPics[i].pic} width="100" height="100">`);
 }
+
+//Adding markers with no pics
+for (const i in markers) { //`String text ${expression}` is called a template literal
+    L.marker(markers[i].coords, {icon: markers[i].icon}).addTo(map);
+}
+
+//I still need to style this
+//Add the other coordinates
+//Also I need to add the button to go to the location
+//Also I need to add la leyenda miau
+ document.addEventListener('DOMContentLoaded', function() { 
+    const locationButton = document.getElementById("location");
+    if (locationButton) {
+        locationButton.addEventListener("click", function () {
+            if (map && typeof map.flyTo === "function") {
+                map.flyTo([12.1403630,-86.2234044042226], 17);
+            } else {
+                console.error("map or flyTo function not defined");
+            }
+        });
+    } else {
+        console.error("location element not found");
+    }
+  } )
+
+
+
+
 
 //var myIcon = L.icon({
 //    iconUrl: 'assets/bote-de-basura.png',

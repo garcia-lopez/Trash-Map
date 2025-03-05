@@ -26,7 +26,38 @@
 </head>
 <body>
     <h1 id="title">Mapa de Contaminación por Basura en Villa Progreso, Managua (2025)</h1>
-    <div id="map"></div>
+    <div id="map-container">
+        <div id="map"></div>
+        <img id="location" class="location" src="./assets/mapa.png"/>
+    </div>
+    <div id="legend">
+        <h2>Legenda</h2>
+        <div class="items-section">
+            <div class="section1">
+                <div class="legend-item">
+                    <img src="assets/Camera-trash-icon.png " class="icon" />
+                    <p class="icon-desc">Evidencia de Basura</p>
+                </div>
+                <div class="legend-item">
+                    <img src="assets/Trash-can-with-Pic.png " class="icon" />
+                    <p class="icon-desc">Evidencia de Basurero</p>
+                </div>
+            </div>
+            
+            <div class="section2">
+                <div class="legend-item">
+                    <img src="assets/hedor.png" class="icon" />
+                    <p class="icon-desc">Basura</p>
+                </div>
+                <div class="legend-item">
+                    <img src="assets/trash-can.png" class="icon" />
+                    <p class="icon-desc">Basurero</p>
+                </div>
+            </div>
+        </div>
+
+          
+    </div>
     <script type="module" src="script.js" ></script>
     
 </body>
