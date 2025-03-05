@@ -5,7 +5,7 @@ var trash = L.icon({
 });
 
 var trashCan = L.icon({
-    iconUrl: './assets/Trash-can.png',
+    iconUrl: './assets/TrashCan.png',
     iconSize: [35, 50],
  })
 
